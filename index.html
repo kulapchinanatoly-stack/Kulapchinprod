@@ -14,8 +14,6 @@
 <body class="bg-gradient-to-br from-white via-blue-50 to-blue-100 text-black font-sans">
 
 
-<!-- ФОНОВЫЕ СВЕТОВЫЕ ПЯТНА -->
-
 <div class="fixed inset-0 -z-10 overflow-hidden">
 
 <div class="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-200 rounded-full blur-3xl opacity-40"></div>
@@ -24,8 +22,6 @@
 
 </div>
 
-
-<!-- HERO -->
 
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
 
@@ -61,8 +57,6 @@ transition-all duration-200">
 </section>
 
 
-<!-- CASES -->
-
 <section id="cases" class="py-20 px-4 max-w-6xl mx-auto">
 
 <div id="categoryTitle" class="text-3xl font-bold text-center mb-4"></div>
@@ -86,16 +80,12 @@ hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200"
 </section>
 
 
-<!-- SERVICES -->
-
 <section class="py-20 px-10">
 
 <h2 class="text-3xl font-bold text-center mb-12">Услуги</h2>
 
 <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-
-<!-- Reels -->
 
 <div class="p-6 border border-gray-100 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl
 flex flex-col justify-between h-full
@@ -126,8 +116,6 @@ class="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 tra
 </div>
 
 
-<!-- Подкасты -->
-
 <div class="p-6 border border-gray-100 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl
 flex flex-col justify-between h-full
 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
@@ -156,8 +144,6 @@ class="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 tra
 
 </div>
 
-
-<!-- Онлайн курсы -->
 
 <div class="p-6 border border-gray-100 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl
 flex flex-col justify-between h-full
@@ -193,8 +179,6 @@ class="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 tra
 </section>
 
 
-<!-- CONTACT -->
-
 <section id="contact" class="py-20 bg-black text-white text-center px-6">
 
 <h2 class="text-3xl font-bold mb-6">
@@ -228,26 +212,30 @@ Telegram
 
 <script>
 
-
 const cases=[
-
+{title:"Cofix",category:"Реклама",video:"https://kinescope.io/embed/cRwJQcrmZBzb54sKBRcgvn"},
+{title:"Шоурил ведущего",category:"Реклама",video:"https://kinescope.io/embed/rWck6GffhzWmXmmfwWvXJc"},
+{title:"КСК «Русь»",category:"Реклама",video:"https://kinescope.io/embed/9GBJfTb3QZbEnBTqGy31Q7"},
 {title:"Фитнес",category:"Вертикальный контент",video:"https://kinescope.io/embed/rHBKDK6N4iWMqqWaWefGgh",tags:["Имидж"]},
 {title:"Стоматология",category:"Вертикальный контент",video:"https://kinescope.io/embed/qTyvP4b3v8izoFzgTurqGm",tags:["Имидж"]},
-{title:"Роллы",category:"Вертикальный контент",video:"https://kinescope.io/embed/hEGTG9ykzGo6KrLU9FEfRv",tags:["Имидж"]},
+{title:"Фитнес",category:"Вертикальный контент",video:"https://kinescope.io/embed/e6hdeed62mX6nXH4SikMJ6",tags:["Имидж"]},
+{title:"Роллы",category:"Вертикальный контент",video:"https://kinescope.io/embed/tUEbeQB9GV3B4BmbioPCTC",tags:["Имидж"]},
 {title:"Перманентный макияж",category:"Вертикальный контент",video:"https://kinescope.io/embed/wW8iLR8wruVjnjZ2rjmNCV",tags:["Имидж"]},
+{title:"Роллы",category:"Вертикальный контент",video:"https://kinescope.io/embed/hEGTG9ykzGo6KrLU9FEfRv",tags:["Имидж"]},
 {title:"Салон красоты",category:"Вертикальный контент",video:"https://kinescope.io/embed/6VWo8PLFgwLqLRopb45TzL",tags:["Имидж"]},
-
+{title:"Кондитерская",category:"Вертикальный контент",video:"https://kinescope.io/embed/ipgR2c7azz4FLk76nat6bz",tags:["Имидж"]},
 {title:"Ведущий",category:"Вертикальный контент",video:"https://kinescope.io/embed/gdRhEgyf5q5QDZahRN4Rpv",tags:["Экспертный"]},
 {title:"Роллы",category:"Вертикальный контент",video:"https://kinescope.io/embed/74sJPL1PSLKNT2Yrjztmnq",tags:["Экспертный"]},
 {title:"Стоматология",category:"Вертикальный контент",video:"https://kinescope.io/embed/fWZoa33FVuCALJdHDn8asv",tags:["Экспертный"]},
+{title:"Подкаст",category:"Вертикальный контент",video:"https://kinescope.io/embed/8Ch724rcWA7b6ZPow1ezMo",tags:["Экспертный"]},
 {title:"Астролог",category:"Вертикальный контент",video:"https://kinescope.io/embed/bf6go2D2zRsR2LmHx27ZoQ",tags:["Экспертный"]},
+{title:"Подкаст",category:"Вертикальный контент",video:"https://kinescope.io/embed/au3sVgcPkqn9PWQM7Ar1JE",tags:["Экспертный"]},
+{title:"Шахматы",category:"Вертикальный контент",video:"https://kinescope.io/embed/bXjw5Jwe4nEf4sm47bXreR",tags:["Мероприятие"]},
+{title:"Детский праздник",category:"Вертикальный контент",video:"https://kinescope.io/embed/168sCXpH1W5Qfw2ExRuub6",tags:["Мероприятие"]},
 {title:"Психолог",category:"Вертикальный контент",video:"https://kinescope.io/embed/wsdVfPng1qW4MPRzFvqxsD",tags:["Экспертный"]}
-
 ];
 
-
 let activeTag=null;
-
 
 function showCategories(){
 
@@ -257,23 +245,23 @@ document.getElementById('categoryTitle').innerHTML=`
 
 <div class="flex justify-center gap-4 mb-10 flex-wrap max-w-2xl mx-auto">
 
-  <button onclick="showCategory('Вертикальный контент')" 
-  class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
-  hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
-    Вертикальный контент
-  </button>
+<button onclick="showCategory('Вертикальный контент')" 
+class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
+hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
+Вертикальный контент
+</button>
 
-  <button onclick="showCategory('Курсы/Подкасты')" 
-  class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
-  hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
-    Курсы и подкасты
-  </button>
+<button onclick="showCategory('Курсы/Подкасты')" 
+class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
+hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
+Курсы и подкасты
+</button>
 
-  <button onclick="showCategory('Реклама')" 
-  class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
-  hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
-    Реклама
-  </button>
+<button onclick="showCategory('Реклама')" 
+class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
+hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
+Реклама
+</button>
 
 </div>
 `;
@@ -286,7 +274,6 @@ activeTag=null;
 
 }
 
-
 function goBackToCases(){
 
 showCategories();
@@ -294,7 +281,6 @@ showCategories();
 document.getElementById('cases').scrollIntoView({behavior:"smooth"});
 
 }
-
 
 function showCategory(category){
 
@@ -308,10 +294,53 @@ document.getElementById('categoryTitle').innerHTML=`
 
 document.getElementById('backButton').classList.remove('hidden');
 
-renderCases(filtered);
+const grid=document.getElementById('casesGrid');
+
+if(category==="Реклама"){
+
+grid.className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto";
+
+document.getElementById('tagFilter').innerHTML='';
 
 }
 
+else{
+
+grid.className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4";
+
+const tags=new Set();
+
+filtered.forEach(c=>c.tags?.forEach(t=>tags.add(t)));
+
+const tagFilter=document.getElementById('tagFilter');
+
+tagFilter.innerHTML='';
+
+tags.forEach(tag=>{
+
+const btn=document.createElement('button');
+
+btn.innerText="#"+tag;
+
+btn.className="px-3 py-1 bg-gray-200 rounded-full text-sm hover:bg-gray-400 transition";
+
+btn.onclick=()=>{
+
+activeTag=tag;
+
+renderCases(filtered);
+
+};
+
+tagFilter.appendChild(btn);
+
+});
+
+}
+
+renderCases(filtered);
+
+}
 
 function renderCases(casesArray){
 
@@ -320,6 +349,14 @@ const grid=document.getElementById('casesGrid');
 grid.innerHTML='';
 
 casesArray.forEach(c=>{
+
+if(activeTag && c.tags && !c.tags.includes(activeTag)) return;
+
+const isVertical=c.category==="Вертикальный контент";
+
+const videoClass=isVertical
+? "w-full aspect-[9/16] rounded-xl overflow-hidden relative shadow-lg"
+: "w-full aspect-video rounded-xl overflow-hidden relative shadow-lg";
 
 const item=document.createElement('div');
 
@@ -331,14 +368,12 @@ item.innerHTML=`
 
 <h3 class="text-lg font-semibold">${c.title}</h3>
 
-<span class="text-xs bg-gray-200 px-2 py-1 rounded-full">#${c.tags[0]}</span>
+${isVertical && c.tags ? `<span class="text-xs bg-gray-200 px-2 py-1 rounded-full">#${c.tags[0]}</span>` : ""}
 
 </div>
 
-<div class="w-full aspect-[9/16] rounded-xl overflow-hidden relative shadow-lg">
-
+<div class="${videoClass}">
 <iframe src="${c.video}" class="absolute top-0 left-0 w-full h-full rounded-xl"></iframe>
-
 </div>
 
 `;
