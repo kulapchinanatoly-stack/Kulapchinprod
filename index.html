@@ -38,36 +38,38 @@
     </div>
   </section>
 
-  <section id="cases" class="px-4 pb-16 sm:px-6">
-    <div class="mx-auto max-w-6xl rounded-[32px] border border-white/30 bg-[#17100d] p-4 text-white shadow-[0_28px_90px_rgba(44,19,8,0.22)] sm:p-6 lg:p-8">
+  <section id="cases" class="px-3 pb-16 sm:px-6">
+    <div class="mx-auto max-w-6xl rounded-[28px] border border-white/30 bg-[#17100d] p-3 text-white shadow-[0_28px_90px_rgba(44,19,8,0.22)] sm:rounded-[32px] sm:p-6 lg:p-8">
       <div>
         <div class="mb-4">
           <div>
             <p class="text-sm uppercase tracking-[0.32em] text-[#d3a17e]">Portfolio</p>
-            <h2 class="mt-3 text-4xl font-black leading-none tracking-[-0.05em] sm:text-5xl">
+            <h2 class="mt-2 text-[2.25rem] font-black leading-none tracking-[-0.05em] sm:mt-3 sm:text-5xl">
               OUR WORKS
             </h2>
           </div>
         </div>
 
-        <div id="categoryTabs" class="mb-4 flex gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
+        <div id="categoryTabs" class="mb-3 flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mb-4 sm:gap-3"></div>
         <div id="tagFilterWrap" class="mb-4 hidden">
           <div id="tagFilter" class="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
         </div>
 
-        <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
-          <h3 id="activeCategoryTitle" class="text-2xl font-bold text-white sm:text-3xl"></h3>
+        <div class="mb-3 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+          <h3 id="activeCategoryTitle" class="text-xl font-bold text-white sm:text-3xl"></h3>
           <div class="flex items-center gap-2">
-            <button id="scrollPrev" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xl text-white transition hover:bg-white/10">
+            <button id="scrollPrev" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-lg text-white transition hover:bg-white/10 sm:h-11 sm:w-11 sm:text-xl">
               ←
             </button>
-            <button id="scrollNext" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xl text-white transition hover:bg-white/10">
+            <button id="scrollNext" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-lg text-white transition hover:bg-white/10 sm:h-11 sm:w-11 sm:text-xl">
               →
             </button>
           </div>
         </div>
 
-        <div id="casesTrack" class="flex gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
+        <div id="casesPages" class="overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div id="casesTrack" class="flex gap-3 sm:gap-4"></div>
+        </div>
         <div id="emptyCases" class="hidden rounded-[24px] border border-white/10 bg-white/5 p-6 text-center text-sm text-white/65">
           В этой категории пока нет кейсов.
         </div>
@@ -180,6 +182,7 @@
     const categoryTabs = document.getElementById("categoryTabs");
     const tagFilterWrap = document.getElementById("tagFilterWrap");
     const tagFilter = document.getElementById("tagFilter");
+    const casesPages = document.getElementById("casesPages");
     const casesTrack = document.getElementById("casesTrack");
     const activeCategoryTitle = document.getElementById("activeCategoryTitle");
     const emptyCases = document.getElementById("emptyCases");
@@ -207,16 +210,47 @@
       categoryTabs.innerHTML = categories.map((category) => `
         <button
           onclick="setCategory('${category.name}')"
-          class="min-w-[240px] rounded-[24px] border px-4 py-4 text-left transition lg:min-w-0 ${
+          data-category="${category.name}"
+          class="min-w-[210px] rounded-[20px] border px-3 py-3 text-left transition sm:min-w-[240px] sm:rounded-[24px] sm:px-4 sm:py-4 lg:min-w-0 ${
             activeCategory === category.name
               ? "border-[#d3a17e] bg-[#d3a17e] text-[#1a0f0a]"
               : "border-white/10 bg-white/5 text-white hover:bg-white/10"
           }"
         >
-          <div class="text-base font-bold">${category.name}</div>
-          <div class="mt-1 text-sm ${activeCategory === category.name ? "text-[#4a2a1b]/80" : "text-white/55"}">${category.description}</div>
+          <div class="text-[15px] font-bold sm:text-base">${category.name}</div>
+          <div class="mt-1 text-xs sm:text-sm ${activeCategory === category.name ? "text-[#4a2a1b]/80" : "text-white/55"}">${category.description}</div>
         </button>
       `).join("");
+    }
+
+    function scrollActiveCategoryIntoView() {
+      const activeButton = categoryTabs.querySelector(`[data-category="${activeCategory}"]`);
+      if (!activeButton) return;
+
+      activeButton.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+    }
+
+    function scrollActiveTagIntoView() {
+      const activeButton = tagFilter.querySelector(`[data-tag="${activeTag}"]`);
+      if (!activeButton) return;
+
+      activeButton.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+    }
+
+    function chunkCases(items, chunkSize) {
+      const result = [];
+      for (let i = 0; i < items.length; i += chunkSize) {
+        result.push(items.slice(i, i + chunkSize));
+      }
+      return result;
     }
 
     function renderTags() {
@@ -225,7 +259,8 @@
       tagFilter.innerHTML = tags.map((tag) => `
         <button
           onclick="setTag('${tag}')"
-          class="whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition ${
+          data-tag="${tag}"
+          class="whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
             activeTag === tag
               ? "border-[#d3a17e] bg-[#d3a17e] text-[#1a0f0a]"
               : "border-white/10 bg-white/5 text-white/75 hover:bg-white/10"
@@ -243,23 +278,24 @@
 
       if (!visibleCases.length) {
         casesTrack.innerHTML = "";
-        casesTrack.classList.add("hidden");
+        casesPages.classList.add("hidden");
         emptyCases.classList.remove("hidden");
         return;
       }
 
-      casesTrack.classList.remove("hidden");
+      casesPages.classList.remove("hidden");
       emptyCases.classList.add("hidden");
 
-      casesTrack.innerHTML = visibleCases.map((item) => {
-        const isVertical = item.category !== "Реклама";
-        const cardWidth = isVertical ? "w-[180px] sm:w-[210px] lg:w-[228px]" : "w-[260px] sm:w-[340px] lg:w-[400px]";
-        const videoBox = isVertical
-          ? "relative aspect-[4/6] overflow-hidden rounded-[26px] bg-black"
-          : "relative aspect-video overflow-hidden rounded-[26px] bg-black";
+      const cardMarkup = visibleCases.map((item) => {
+        const cardWidth = item.category === "Реклама"
+          ? "w-full sm:w-[340px] lg:w-[400px]"
+          : "w-full sm:w-[210px] lg:w-[228px]";
+        const videoBox = item.category === "Реклама"
+          ? "relative aspect-video overflow-hidden rounded-[20px] bg-black sm:rounded-[26px]"
+          : "relative aspect-[5/6] overflow-hidden rounded-[20px] bg-black sm:aspect-[4/6] sm:rounded-[26px]";
 
         return `
-          <article class="${cardWidth} shrink-0 snap-start rounded-[30px] border border-white/10 bg-white/5 p-3 backdrop-blur">
+          <article class="${cardWidth} shrink-0 snap-start rounded-[24px] border border-white/10 bg-white/5 p-2.5 backdrop-blur sm:rounded-[30px] sm:p-3">
             <div class="${videoBox}">
               <iframe
                 src="${item.video}"
@@ -269,18 +305,28 @@
                 allowfullscreen
                 loading="lazy"></iframe>
             </div>
-            <div class="mt-4">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">${item.category}</span>
-                ${item.tags ? `<span class="rounded-full bg-[#d3a17e] px-3 py-1 text-xs font-semibold text-[#1a0f0a]">#${item.tags[0]}</span>` : ""}
-              </div>
-              <h4 class="mt-3 text-lg font-semibold text-white">${item.title}</h4>
+            <div class="mt-3 sm:mt-4">
+              <h4 class="text-base font-semibold text-white sm:text-lg">${item.title}</h4>
+              ${item.tags ? `<div class="mt-2"><span class="rounded-full bg-[#d3a17e] px-2 py-0.5 text-[10px] font-semibold text-[#1a0f0a] sm:px-2.5 sm:text-[11px]">#${item.tags[0]}</span></div>` : ""}
             </div>
           </article>
         `;
-      }).join("");
+      });
 
-      casesTrack.scrollTo({ left: 0, behavior: "smooth" });
+      const mobilePages = chunkCases(cardMarkup, 4).map((page) => `
+        <div class="grid w-full shrink-0 grid-cols-2 gap-3 snap-start sm:hidden">
+          ${page.join("")}
+        </div>
+      `).join("");
+
+      const desktopRow = `
+        <div class="hidden shrink-0 gap-4 sm:flex">
+          ${cardMarkup.join("")}
+        </div>
+      `;
+
+      casesTrack.innerHTML = mobilePages + desktopRow;
+      casesPages.scrollTo({ left: 0, behavior: "smooth" });
     }
 
     function setCategory(category) {
@@ -289,25 +335,30 @@
       renderCategoryTabs();
       renderTags();
       renderCases();
+      scrollActiveCategoryIntoView();
+      scrollActiveTagIntoView();
     }
 
     function setTag(tag) {
       activeTag = tag;
       renderTags();
       renderCases();
+      scrollActiveTagIntoView();
     }
 
     scrollPrev.addEventListener("click", () => {
-      casesTrack.scrollBy({ left: -320, behavior: "smooth" });
+      casesPages.scrollBy({ left: -320, behavior: "smooth" });
     });
 
     scrollNext.addEventListener("click", () => {
-      casesTrack.scrollBy({ left: 320, behavior: "smooth" });
+      casesPages.scrollBy({ left: 320, behavior: "smooth" });
     });
 
     renderCategoryTabs();
     renderTags();
     renderCases();
+    scrollActiveCategoryIntoView();
+    scrollActiveTagIntoView();
   </script>
 </body>
 </html>
