@@ -288,11 +288,11 @@
 
       const cardMarkup = visibleCases.map((item) => {
         const cardWidth = item.category === "Реклама"
-          ? "w-full sm:w-[340px] lg:w-[400px]"
-          : "w-full sm:w-[210px] lg:w-[228px]";
+          ? "w-[260px] sm:w-[360px] lg:w-[420px]"
+          : "w-full sm:w-[220px] lg:w-[238px]";
         const videoBox = item.category === "Реклама"
-          ? "relative aspect-video overflow-hidden rounded-[20px] bg-black sm:rounded-[26px]"
-          : "relative aspect-[5/6] overflow-hidden rounded-[20px] bg-black sm:aspect-[4/6] sm:rounded-[26px]";
+          ? "relative aspect-[1.62/1] overflow-hidden rounded-[20px] bg-black sm:aspect-video sm:rounded-[26px]"
+          : "relative aspect-[4.5/6] overflow-hidden rounded-[20px] bg-black sm:aspect-[4/6] sm:rounded-[26px]";
 
         return `
           <article class="${cardWidth} shrink-0 snap-start rounded-[24px] border border-white/10 bg-white/5 p-2.5 backdrop-blur sm:rounded-[30px] sm:p-3">
@@ -313,11 +313,17 @@
         `;
       });
 
-      const mobilePages = chunkCases(cardMarkup, 4).map((page) => `
-        <div class="grid w-full shrink-0 grid-cols-2 gap-3 snap-start sm:hidden">
-          ${page.join("")}
-        </div>
-      `).join("");
+      const mobilePages = activeCategory === "Вертикальный контент"
+        ? chunkCases(cardMarkup, 4).map((page) => `
+            <div class="grid w-full shrink-0 grid-cols-2 gap-3.5 snap-start sm:hidden">
+              ${page.join("")}
+            </div>
+          `).join("")
+        : `
+            <div class="flex shrink-0 gap-3.5 sm:hidden">
+              ${cardMarkup.join("")}
+            </div>
+          `;
 
       const desktopRow = `
         <div class="hidden shrink-0 gap-4 sm:flex">
