@@ -1,392 +1,313 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 <title>Kulapchin Production</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
-
-<body class="bg-gradient-to-br from-white via-blue-50 to-blue-100 text-black font-sans">
-
-
-<div class="fixed inset-0 -z-10 overflow-hidden">
-
-<div class="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-200 rounded-full blur-3xl opacity-40"></div>
-
-<div class="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-purple-200 rounded-full blur-3xl opacity-40"></div>
-
-</div>
-
-
-<section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-
-<h1 class="text-5xl font-bold mb-6">KULAPCHIN PRODUCTION</h1>
-
-<p class="text-xl max-w-2xl mb-8 text-gray-800">
-Reels • Подкасты • Онлайн-курсы • Реклама. Полный цикл производства.
-</p>
-
-<div class="flex gap-4">
-
-<a href="#cases"
-class="bg-black text-white px-6 py-3 rounded-xl
-hover:shadow-lg hover:-translate-y-1 hover:bg-gray-900
-transition-all duration-200">
-
-Посмотреть кейсы
-
-</a>
-
-<a href="https://t.me/kulapchin_a"
-target="_blank"
-class="border px-6 py-3 rounded-xl
-hover:shadow-lg hover:-translate-y-1 hover:bg-white
-transition-all duration-200">
-
-Записаться
-
-</a>
-
-</div>
-
-</section>
-
-
-<section id="cases" class="py-20 px-4 max-w-6xl mx-auto">
-
-<div id="categoryTitle" class="text-3xl font-bold text-center mb-4"></div>
-
-<div id="tagFilter" class="flex flex-wrap justify-center gap-3 mb-6"></div>
-
-<div id="casesGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
-
-<div id="backButton" class="text-center mt-10 hidden">
-
-<button onclick="goBackToCases()"
-class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
-hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
-
-← Назад к категориям
-
-</button>
-
-</div>
-
-</section>
-
-
-<section class="py-20 px-10">
-
-<h2 class="text-3xl font-bold text-center mb-12">Услуги</h2>
-
-<div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-
-
-<div class="p-6 border border-gray-100 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl
-flex flex-col justify-between h-full
-hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-
-<h3 class="font-semibold text-xl mb-3">Reels для экспертов</h3>
-
-<p class="mb-4 text-gray-800">
-Съёмка вертикального контента, помощь с идеями, монтаж, титры. Всё под ключ для вашего бренда и экспертизы.
-</p>
-
-<div class="mt-auto flex items-center justify-between">
-
-<span class="inline-block bg-gray-100 text-blue-600 font-bold px-4 py-2 rounded-lg text-lg">
-от 2000 ₽
-</span>
-
-<a href="https://t.me/kulapchin_a"
-target="_blank"
-class="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-
-Записаться
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="p-6 border border-gray-100 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl
-flex flex-col justify-between h-full
-hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-
-<h3 class="font-semibold text-xl mb-3">Подкасты под ключ</h3>
-
-<p class="mb-4 text-gray-800">
-Съёмка на 2–3 камеры, свет, монтаж, подготовка к публикации.
-</p>
-
-<div class="mt-auto flex items-center justify-between">
-
-<span class="inline-block bg-gray-100 text-blue-600 font-bold px-4 py-2 rounded-lg text-lg">
-от 25 000 ₽
-</span>
-
-<a href="https://t.me/kulapchin_a"
-target="_blank"
-class="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-
-Записаться
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="p-6 border border-gray-100 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl
-flex flex-col justify-between h-full
-hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-
-<h3 class="font-semibold text-xl mb-3">Онлайн-курсы</h3>
-
-<p class="mb-4 text-gray-800">
-Съёмка образовательных видео и монтаж уроков.
-</p>
-
-<div class="mt-auto flex items-center justify-between">
-
-<span class="inline-block bg-gray-100 text-blue-600 font-bold px-4 py-2 rounded-lg text-lg">
-от 10 000 ₽
-</span>
-
-<a href="https://t.me/kulapchin_a"
-target="_blank"
-class="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-
-Записаться
-
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<section id="contact" class="py-20 bg-black text-white text-center px-6">
-
-<h2 class="text-3xl font-bold mb-6">
-Записаться на съёмку или монтаж
-</h2>
-
-<p class="mb-8">
-Напишите мне в мессенджер и обсудим ваш проект
-</p>
-
-<div class="flex justify-center gap-4">
-
-<a href="https://t.me/kulapchin_a"
-target="_blank"
-class="bg-white text-black px-6 py-3 rounded-xl
-hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-
-Telegram
-
-</a>
-
-</div>
-
-</section>
-
-
-<footer class="py-6 text-center text-gray-500">
-© Anatoly Videographer
-</footer>
-
-
-<script>
-
-const cases=[
-{title:"Cofix",category:"Реклама",video:"https://kinescope.io/embed/cRwJQcrmZBzb54sKBRcgvn"},
-{title:"Шоурил ведущего",category:"Реклама",video:"https://kinescope.io/embed/rWck6GffhzWmXmmfwWvXJc"},
-{title:"КСК «Русь»",category:"Реклама",video:"https://kinescope.io/embed/9GBJfTb3QZbEnBTqGy31Q7"},
-{title:"Фитнес",category:"Вертикальный контент",video:"https://kinescope.io/embed/rHBKDK6N4iWMqqWaWefGgh",tags:["Имидж"]},
-{title:"Стоматология",category:"Вертикальный контент",video:"https://kinescope.io/embed/qTyvP4b3v8izoFzgTurqGm",tags:["Имидж"]},
-{title:"Фитнес",category:"Вертикальный контент",video:"https://kinescope.io/embed/e6hdeed62mX6nXH4SikMJ6",tags:["Имидж"]},
-{title:"Роллы",category:"Вертикальный контент",video:"https://kinescope.io/embed/tUEbeQB9GV3B4BmbioPCTC",tags:["Имидж"]},
-{title:"Перманентный макияж",category:"Вертикальный контент",video:"https://kinescope.io/embed/wW8iLR8wruVjnjZ2rjmNCV",tags:["Имидж"]},
-{title:"Роллы",category:"Вертикальный контент",video:"https://kinescope.io/embed/hEGTG9ykzGo6KrLU9FEfRv",tags:["Имидж"]},
-{title:"Салон красоты",category:"Вертикальный контент",video:"https://kinescope.io/embed/6VWo8PLFgwLqLRopb45TzL",tags:["Имидж"]},
-{title:"Кондитерская",category:"Вертикальный контент",video:"https://kinescope.io/embed/ipgR2c7azz4FLk76nat6bz",tags:["Имидж"]},
-{title:"Ведущий",category:"Вертикальный контент",video:"https://kinescope.io/embed/gdRhEgyf5q5QDZahRN4Rpv",tags:["Экспертный"]},
-{title:"Роллы",category:"Вертикальный контент",video:"https://kinescope.io/embed/74sJPL1PSLKNT2Yrjztmnq",tags:["Экспертный"]},
-{title:"Стоматология",category:"Вертикальный контент",video:"https://kinescope.io/embed/fWZoa33FVuCALJdHDn8asv",tags:["Экспертный"]},
-{title:"Подкаст",category:"Вертикальный контент",video:"https://kinescope.io/embed/8Ch724rcWA7b6ZPow1ezMo",tags:["Экспертный"]},
-{title:"Астролог",category:"Вертикальный контент",video:"https://kinescope.io/embed/bf6go2D2zRsR2LmHx27ZoQ",tags:["Экспертный"]},
-{title:"Подкаст",category:"Вертикальный контент",video:"https://kinescope.io/embed/au3sVgcPkqn9PWQM7Ar1JE",tags:["Экспертный"]},
-{title:"Шахматы",category:"Вертикальный контент",video:"https://kinescope.io/embed/bXjw5Jwe4nEf4sm47bXreR",tags:["Мероприятие"]},
-{title:"Детский праздник",category:"Вертикальный контент",video:"https://kinescope.io/embed/168sCXpH1W5Qfw2ExRuub6",tags:["Мероприятие"]},
-{title:"Психолог",category:"Вертикальный контент",video:"https://kinescope.io/embed/wsdVfPng1qW4MPRzFvqxsD",tags:["Экспертный"]}
-];
-
-let activeTag=null;
-
-function showCategories(){
-
-document.getElementById('cases').scrollIntoView({behavior:"smooth"});
-
-document.getElementById('categoryTitle').innerHTML=`
-
-<div class="flex justify-center gap-4 mb-10 flex-wrap max-w-2xl mx-auto">
-
-<button onclick="showCategory('Вертикальный контент')" 
-class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
-hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
-Вертикальный контент
-</button>
-
-<button onclick="showCategory('Курсы/Подкасты')" 
-class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
-hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
-Курсы и подкасты
-</button>
-
-<button onclick="showCategory('Реклама')" 
-class="px-6 py-3 text-base font-medium text-gray-800 bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl shadow-md
-hover:shadow-lg hover:-translate-y-1 hover:bg-white transition-all duration-200">
-Реклама
-</button>
-
-</div>
-`;
-
-document.getElementById('tagFilter').innerHTML='';
-document.getElementById('casesGrid').innerHTML='';
-document.getElementById('backButton').classList.add('hidden');
-
-activeTag=null;
-
-}
-
-function goBackToCases(){
-
-showCategories();
-
-document.getElementById('cases').scrollIntoView({behavior:"smooth"});
-
-}
-
-function showCategory(category){
-
-activeTag=null;
-
-const filtered=cases.filter(c=>c.category===category);
-
-document.getElementById('categoryTitle').innerHTML=`
-<h2 class="text-3xl font-bold text-center mb-4">${category}</h2>
-`;
-
-document.getElementById('backButton').classList.remove('hidden');
-
-const grid=document.getElementById('casesGrid');
-
-if(category==="Реклама"){
-
-grid.className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto";
-
-document.getElementById('tagFilter').innerHTML='';
-
-}
-
-else{
-
-grid.className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4";
-
-const tags=new Set();
-
-filtered.forEach(c=>c.tags?.forEach(t=>tags.add(t)));
-
-const tagFilter=document.getElementById('tagFilter');
-
-tagFilter.innerHTML='';
-
-tags.forEach(tag=>{
-
-const btn=document.createElement('button');
-
-btn.innerText="#"+tag;
-
-btn.className="px-3 py-1 bg-gray-200 rounded-full text-sm hover:bg-gray-400 transition";
-
-btn.onclick=()=>{
-
-activeTag=tag;
-
-renderCases(filtered);
-
-};
-
-tagFilter.appendChild(btn);
-
-});
-
-}
-
-renderCases(filtered);
-
-}
-
-function renderCases(casesArray){
-
-const grid=document.getElementById('casesGrid');
-
-grid.innerHTML='';
-
-casesArray.forEach(c=>{
-
-if(activeTag && c.tags && !c.tags.includes(activeTag)) return;
-
-const isVertical=c.category==="Вертикальный контент";
-
-const videoClass=isVertical
-? "w-full aspect-[9/16] rounded-xl overflow-hidden relative shadow-lg"
-: "w-full aspect-video rounded-xl overflow-hidden relative shadow-lg";
-
-const item=document.createElement('div');
-
-item.className="flex flex-col hover:-translate-y-1 transition";
-
-item.innerHTML=`
-
-<div class="text-center mb-2">
-
-<h3 class="text-lg font-semibold">${c.title}</h3>
-
-${isVertical && c.tags ? `<span class="text-xs bg-gray-200 px-2 py-1 rounded-full">#${c.tags[0]}</span>` : ""}
-
-</div>
-
-<div class="${videoClass}">
-<iframe src="${c.video}" class="absolute top-0 left-0 w-full h-full rounded-xl"></iframe>
-</div>
-
-`;
-
-grid.appendChild(item);
-
-});
-
-}
-
-showCategories();
-
-</script>
-
+<body class="bg-gradient-to-br from-[#f7eee6] via-[#ead2bd] to-[#d4a77f] text-[#2a130b] font-sans">
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-white/20 blur-3xl"></div>
+    <div class="absolute bottom-[-120px] right-[-120px] h-[320px] w-[320px] rounded-full bg-[#8f5431]/20 blur-3xl"></div>
+  </div>
+
+  <section class="px-4 pb-14 pt-10 sm:px-6">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-[#6d3d23]">Kulapchin Production</p>
+          <h1 class="mt-4 max-w-xl text-4xl font-black leading-[0.9] tracking-[-0.04em] sm:text-6xl">
+            KULAPCHIN PRODUCTION
+          </h1>
+        </div>
+        <div class="pt-1">
+          <p class="max-w-xl text-base leading-7 text-[#4a2a1b]/80 sm:text-lg">
+            Reels • Подкасты • Онлайн-курсы • Реклама. Полный цикл производства.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#cases" class="rounded-full bg-[#1a0f0a] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">
+              Смотреть кейсы
+            </a>
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full border border-[#4a2a1b]/15 bg-white/60 px-6 py-3 text-sm font-semibold text-[#2a130b] transition hover:-translate-y-0.5 hover:bg-white">
+              Записаться
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="px-4 pb-16 sm:px-6">
+    <div class="mx-auto max-w-6xl rounded-[32px] border border-white/30 bg-[#17100d] p-4 text-white shadow-[0_28px_90px_rgba(44,19,8,0.22)] sm:p-6 lg:p-8">
+      <div>
+        <div class="mb-4">
+          <div>
+            <p class="text-sm uppercase tracking-[0.32em] text-[#d3a17e]">Portfolio</p>
+            <h2 class="mt-3 text-4xl font-black leading-none tracking-[-0.05em] sm:text-5xl">
+              OUR WORKS
+            </h2>
+          </div>
+        </div>
+
+        <div id="categoryTabs" class="mb-4 flex gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
+        <div id="tagFilterWrap" class="mb-4 hidden">
+          <div id="tagFilter" class="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
+        </div>
+
+        <div class="mb-3 flex flex-wrap items-center justify-between gap-3">
+          <h3 id="activeCategoryTitle" class="text-2xl font-bold text-white sm:text-3xl"></h3>
+          <div class="flex items-center gap-2">
+            <button id="scrollPrev" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xl text-white transition hover:bg-white/10">
+              ←
+            </button>
+            <button id="scrollNext" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-xl text-white transition hover:bg-white/10">
+              →
+            </button>
+          </div>
+        </div>
+
+        <div id="casesTrack" class="flex gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
+        <div id="emptyCases" class="hidden rounded-[24px] border border-white/10 bg-white/5 p-6 text-center text-sm text-white/65">
+          В этой категории пока нет кейсов.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-16 sm:px-6">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-center text-3xl font-bold text-[#2a130b] sm:text-4xl">Услуги</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="flex h-full flex-col rounded-[28px] border border-white/40 bg-white/60 p-6 shadow-lg backdrop-blur">
+          <h3 class="text-xl font-semibold">Reels для экспертов</h3>
+          <p class="mt-4 text-[#4a2a1b]/80">
+            Съёмка вертикального контента, помощь с идеями, монтаж и титры. Всё под ключ для бренда и экспертности.
+          </p>
+          <div class="mt-auto flex items-center justify-between gap-4 pt-6">
+            <span class="rounded-full bg-[#1a0f0a] px-4 py-2 text-sm font-bold text-white">от 2 000 ₽</span>
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-[#1a0f0a] hover:text-white">
+              Записаться
+            </a>
+          </div>
+        </article>
+
+        <article class="flex h-full flex-col rounded-[28px] border border-white/40 bg-white/60 p-6 shadow-lg backdrop-blur">
+          <h3 class="text-xl font-semibold">Подкасты под ключ</h3>
+          <p class="mt-4 text-[#4a2a1b]/80">
+            Съёмка на 2–3 камеры, свет, монтаж и подготовка к публикации на площадках.
+          </p>
+          <div class="mt-auto flex items-center justify-between gap-4 pt-6">
+            <span class="rounded-full bg-[#1a0f0a] px-4 py-2 text-sm font-bold text-white">от 25 000 ₽</span>
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-[#1a0f0a] hover:text-white">
+              Записаться
+            </a>
+          </div>
+        </article>
+
+        <article class="flex h-full flex-col rounded-[28px] border border-white/40 bg-white/60 p-6 shadow-lg backdrop-blur">
+          <h3 class="text-xl font-semibold">Онлайн-курсы</h3>
+          <p class="mt-4 text-[#4a2a1b]/80">
+            Съёмка образовательных видео, монтаж уроков и аккуратная упаковка материалов.
+          </p>
+          <div class="mt-auto flex items-center justify-between gap-4 pt-6">
+            <span class="rounded-full bg-[#1a0f0a] px-4 py-2 text-sm font-bold text-white">от 10 000 ₽</span>
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-[#1a0f0a] hover:text-white">
+              Записаться
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-[#1a0f0a] px-4 py-16 text-center text-white sm:px-6">
+    <h2 class="text-3xl font-bold">Записаться на съёмку или монтаж</h2>
+    <p class="mx-auto mt-4 max-w-2xl text-white/70">
+      Напишите в мессенджер и обсудим ваш проект, формат съёмки и подачу контента.
+    </p>
+    <div class="mt-8">
+      <a href="https://t.me/kulapchin_a" target="_blank" class="inline-flex rounded-full bg-white px-8 py-4 font-semibold text-[#1a0f0a] transition hover:-translate-y-0.5">
+        Telegram
+      </a>
+    </div>
+  </section>
+
+  <footer class="px-4 py-6 text-center text-sm text-[#5d3421]/70">
+    © Anatoly Videographer
+  </footer>
+
+  <script>
+    const cases = [
+      { title: "Cofix", category: "Реклама", video: "https://kinescope.io/embed/cRwJQcrmZBzb54sKBRcgvn" },
+      { title: "Шоурил ведущего", category: "Реклама", video: "https://kinescope.io/embed/rWck6GffhzWmXmmfwWvXJc" },
+      { title: "КСК «Русь»", category: "Реклама", video: "https://kinescope.io/embed/9GBJfTb3QZbEnBTqGy31Q7" },
+      { title: "Фитнес", category: "Вертикальный контент", video: "https://kinescope.io/embed/rHBKDK6N4iWMqqWaWefGgh", tags: ["Имидж"] },
+      { title: "Стоматология", category: "Вертикальный контент", video: "https://kinescope.io/embed/qTyvP4b3v8izoFzgTurqGm", tags: ["Имидж"] },
+      { title: "Фитнес", category: "Вертикальный контент", video: "https://kinescope.io/embed/e6hdeed62mX6nXH4SikMJ6", tags: ["Имидж"] },
+      { title: "Роллы", category: "Вертикальный контент", video: "https://kinescope.io/embed/tUEbeQB9GV3B4BmbioPCTC", tags: ["Имидж"] },
+      { title: "Перманентный макияж", category: "Вертикальный контент", video: "https://kinescope.io/embed/wW8iLR8wruVjnjZ2rjmNCV", tags: ["Имидж"] },
+      { title: "Роллы", category: "Вертикальный контент", video: "https://kinescope.io/embed/hEGTG9ykzGo6KrLU9FEfRv", tags: ["Имидж"] },
+      { title: "Салон красоты", category: "Вертикальный контент", video: "https://kinescope.io/embed/6VWo8PLFgwLqLRopb45TzL", tags: ["Имидж"] },
+      { title: "Кондитерская", category: "Вертикальный контент", video: "https://kinescope.io/embed/ipgR2c7azz4FLk76nat6bz", tags: ["Имидж"] },
+      { title: "Ведущий", category: "Вертикальный контент", video: "https://kinescope.io/embed/gdRhEgyf5q5QDZahRN4Rpv", tags: ["Разговорные"] },
+      { title: "Роллы", category: "Вертикальный контент", video: "https://kinescope.io/embed/74sJPL1PSLKNT2Yrjztmnq", tags: ["Разговорные"] },
+      { title: "Стоматология", category: "Вертикальный контент", video: "https://kinescope.io/embed/fWZoa33FVuCALJdHDn8asv", tags: ["Разговорные"] },
+      { title: "Астролог", category: "Вертикальный контент", video: "https://kinescope.io/embed/bf6go2D2zRsR2LmHx27ZoQ", tags: ["Разговорные"] },
+      { title: "Шахматы", category: "Вертикальный контент", video: "https://kinescope.io/embed/bXjw5Jwe4nEf4sm47bXreR", tags: ["Мероприятие"] },
+      { title: "Детский праздник", category: "Вертикальный контент", video: "https://kinescope.io/embed/168sCXpH1W5Qfw2ExRuub6", tags: ["Мероприятие"] },
+      { title: "Психолог", category: "Вертикальный контент", video: "https://kinescope.io/embed/wsdVfPng1qW4MPRzFvqxsD", tags: ["Разговорные"] }
+    ];
+
+    const categories = [
+      {
+        name: "Вертикальный контент",
+        description: "Reels для бизнеса, экспертов и мероприятий"
+      },
+      {
+        name: "Курсы/Подкасты",
+        description: "Интервью, подкасты и обучающие форматы"
+      },
+      {
+        name: "Реклама",
+        description: "Имиджевые и коммерческие ролики"
+      }
+    ];
+
+    let activeCategory = "Вертикальный контент";
+    let activeTag = "Все";
+
+    const categoryTabs = document.getElementById("categoryTabs");
+    const tagFilterWrap = document.getElementById("tagFilterWrap");
+    const tagFilter = document.getElementById("tagFilter");
+    const casesTrack = document.getElementById("casesTrack");
+    const activeCategoryTitle = document.getElementById("activeCategoryTitle");
+    const emptyCases = document.getElementById("emptyCases");
+    const scrollPrev = document.getElementById("scrollPrev");
+    const scrollNext = document.getElementById("scrollNext");
+
+    function filteredByCategory(category) {
+      return cases.filter((item) => item.category === category);
+    }
+
+    function getTags(category) {
+      const categoryCases = filteredByCategory(category);
+      const tags = new Set();
+      categoryCases.forEach((item) => item.tags?.forEach((tag) => tags.add(tag)));
+      return ["Все", ...tags];
+    }
+
+    function getVisibleCases() {
+      const categoryCases = filteredByCategory(activeCategory);
+      if (activeTag === "Все") return categoryCases;
+      return categoryCases.filter((item) => item.tags?.includes(activeTag));
+    }
+
+    function renderCategoryTabs() {
+      categoryTabs.innerHTML = categories.map((category) => `
+        <button
+          onclick="setCategory('${category.name}')"
+          class="min-w-[240px] rounded-[24px] border px-4 py-4 text-left transition lg:min-w-0 ${
+            activeCategory === category.name
+              ? "border-[#d3a17e] bg-[#d3a17e] text-[#1a0f0a]"
+              : "border-white/10 bg-white/5 text-white hover:bg-white/10"
+          }"
+        >
+          <div class="text-base font-bold">${category.name}</div>
+          <div class="mt-1 text-sm ${activeCategory === category.name ? "text-[#4a2a1b]/80" : "text-white/55"}">${category.description}</div>
+        </button>
+      `).join("");
+    }
+
+    function renderTags() {
+      const tags = getTags(activeCategory);
+      tagFilterWrap.classList.toggle("hidden", tags.length <= 1);
+      tagFilter.innerHTML = tags.map((tag) => `
+        <button
+          onclick="setTag('${tag}')"
+          class="whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition ${
+            activeTag === tag
+              ? "border-[#d3a17e] bg-[#d3a17e] text-[#1a0f0a]"
+              : "border-white/10 bg-white/5 text-white/75 hover:bg-white/10"
+          }"
+        >
+          ${tag === "Все" ? "Все" : "#" + tag}
+        </button>
+      `).join("");
+    }
+
+    function renderCases() {
+      const visibleCases = getVisibleCases();
+
+      activeCategoryTitle.textContent = activeCategory;
+
+      if (!visibleCases.length) {
+        casesTrack.innerHTML = "";
+        casesTrack.classList.add("hidden");
+        emptyCases.classList.remove("hidden");
+        return;
+      }
+
+      casesTrack.classList.remove("hidden");
+      emptyCases.classList.add("hidden");
+
+      casesTrack.innerHTML = visibleCases.map((item) => {
+        const isVertical = item.category !== "Реклама";
+        const cardWidth = isVertical ? "w-[180px] sm:w-[210px] lg:w-[228px]" : "w-[260px] sm:w-[340px] lg:w-[400px]";
+        const videoBox = isVertical
+          ? "relative aspect-[4/6] overflow-hidden rounded-[26px] bg-black"
+          : "relative aspect-video overflow-hidden rounded-[26px] bg-black";
+
+        return `
+          <article class="${cardWidth} shrink-0 snap-start rounded-[30px] border border-white/10 bg-white/5 p-3 backdrop-blur">
+            <div class="${videoBox}">
+              <iframe
+                src="${item.video}"
+                title="${item.title}"
+                class="absolute inset-0 h-full w-full"
+                allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+            <div class="mt-4">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">${item.category}</span>
+                ${item.tags ? `<span class="rounded-full bg-[#d3a17e] px-3 py-1 text-xs font-semibold text-[#1a0f0a]">#${item.tags[0]}</span>` : ""}
+              </div>
+              <h4 class="mt-3 text-lg font-semibold text-white">${item.title}</h4>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      casesTrack.scrollTo({ left: 0, behavior: "smooth" });
+    }
+
+    function setCategory(category) {
+      activeCategory = category;
+      activeTag = "Все";
+      renderCategoryTabs();
+      renderTags();
+      renderCases();
+    }
+
+    function setTag(tag) {
+      activeTag = tag;
+      renderTags();
+      renderCases();
+    }
+
+    scrollPrev.addEventListener("click", () => {
+      casesTrack.scrollBy({ left: -320, behavior: "smooth" });
+    });
+
+    scrollNext.addEventListener("click", () => {
+      casesTrack.scrollBy({ left: 320, behavior: "smooth" });
+    });
+
+    renderCategoryTabs();
+    renderTags();
+    renderCases();
+  </script>
 </body>
 </html>
