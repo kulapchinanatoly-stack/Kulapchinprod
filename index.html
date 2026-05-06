@@ -5,33 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Kulapchin Production</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @keyframes floatSlate {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(-1.5deg);
+    }
+  }
+
+  @keyframes blinkDot {
+    0%, 100% {
+      opacity: 0.45;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.18);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes driftGlow {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(10px, -12px, 0) scale(1.04);
+    }
+  }
+
+  .film-float {
+    animation: floatSlate 4.6s ease-in-out infinite;
+  }
+
+  .film-dot {
+    animation: blinkDot 1.8s ease-in-out infinite;
+  }
+
+  .glass-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,255,255,0.44), rgba(255,255,255,0.14) 38%, rgba(255,255,255,0.03) 62%, rgba(255,255,255,0) 82%);
+    pointer-events: none;
+  }
+
+  .liquid-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,248,240,0.54), rgba(255,255,255,0.18));
+    border: 1px solid rgba(255,255,255,0.42);
+    box-shadow: 0 20px 54px rgba(96, 64, 40, 0.14), inset 0 1px 0 rgba(255,255,255,0.52);
+    backdrop-filter: blur(26px) saturate(140%);
+    -webkit-backdrop-filter: blur(26px) saturate(140%);
+  }
+
+  .liquid-dark {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(20,17,16,0.9), rgba(12,10,10,0.82));
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 26px 74px rgba(20, 12, 10, 0.24), inset 0 1px 0 rgba(255,255,255,0.06);
+    backdrop-filter: blur(28px) saturate(130%);
+    -webkit-backdrop-filter: blur(28px) saturate(130%);
+  }
+
+  .liquid-card::before,
+  .liquid-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255,244,232,0.34), transparent 34%);
+    pointer-events: none;
+  }
+
+  .liquid-card::after,
+  .liquid-dark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0) 36%);
+    pointer-events: none;
+  }
+
+  .reveal {
+    opacity: 0;
+    animation: fadeUp 0.9s cubic-bezier(.22,1,.36,1) forwards;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  .ambient-glow {
+    animation: driftGlow 9s ease-in-out infinite;
+  }
+</style>
 </head>
-<body class="bg-gradient-to-br from-[#f7eee6] via-[#ead2bd] to-[#d4a77f] text-[#2a130b] font-sans">
+<body class="bg-[radial-gradient(circle_at_top_left,_rgba(255,250,244,0.98),_transparent_20%),radial-gradient(circle_at_top_right,_rgba(255,230,205,0.62),_transparent_24%),radial-gradient(circle_at_bottom_left,_rgba(244,205,168,0.28),_transparent_22%),radial-gradient(circle_at_bottom_right,_rgba(210,155,115,0.24),_transparent_24%),linear-gradient(145deg,#fbf5ef,#efddd0_40%,#d8b79d_100%)] text-[#241713] font-sans">
   <div class="fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-white/20 blur-3xl"></div>
-    <div class="absolute bottom-[-120px] right-[-120px] h-[320px] w-[320px] rounded-full bg-[#8f5431]/20 blur-3xl"></div>
+    <div class="ambient-glow absolute left-[-90px] top-[-80px] h-[340px] w-[340px] rounded-full bg-white/82 blur-3xl"></div>
+    <div class="ambient-glow absolute bottom-[-110px] right-[-70px] h-[320px] w-[320px] rounded-full bg-[#d28d58]/36 blur-3xl"></div>
+    <div class="absolute left-[12%] top-[18%] h-[240px] w-[240px] rounded-full bg-[#ffdcbf]/28 blur-3xl"></div>
+    <div class="absolute right-[16%] top-[30%] h-[180px] w-[180px] rounded-full bg-[#fff1de]/34 blur-3xl"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:34px_34px] opacity-[0.14]"></div>
+    <div class="absolute inset-x-0 top-0 h-px bg-white/60"></div>
   </div>
 
-  <section class="px-4 pb-14 pt-10 sm:px-6">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-[#6d3d23]">Kulapchin Production</p>
-          <h1 class="mt-4 max-w-xl text-4xl font-black leading-[0.9] tracking-[-0.04em] sm:text-6xl">
+  <section class="px-3 pb-14 pt-10 sm:px-6">
+    <div class="liquid-card reveal mx-auto w-full max-w-[92rem] rounded-[34px] px-5 py-6 sm:px-8 sm:py-8">
+      <div class="grid items-start gap-x-4 gap-y-4 grid-cols-[minmax(0,1fr)_auto] sm:gap-x-6 sm:gap-y-6 lg:grid-cols-[minmax(0,1fr)_auto]">
+        <div class="min-w-0">
+          <h1 class="max-w-2xl text-4xl font-black leading-[0.92] tracking-[-0.04em] sm:text-6xl">
             KULAPCHIN PRODUCTION
           </h1>
-        </div>
-        <div class="pt-1">
-          <p class="max-w-xl text-base leading-7 text-[#4a2a1b]/80 sm:text-lg">
-            Reels • Подкасты • Онлайн-курсы • Реклама. Полный цикл производства.
+          <p class="max-w-xl text-base leading-7 text-[#51423a]/80 sm:text-lg">
+            Reels, реклама, подкасты и онлайн-курсы. Съёмка и монтаж под ключ.
           </p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#cases" class="rounded-full bg-[#1a0f0a] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">
-              Смотреть кейсы
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="#cases" class="rounded-full bg-[#201510] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">
+              Кейсы
             </a>
-            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full border border-[#4a2a1b]/15 bg-white/60 px-6 py-3 text-sm font-semibold text-[#2a130b] transition hover:-translate-y-0.5 hover:bg-white">
-              Записаться
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full border border-white/50 bg-white/30 px-6 py-3 text-sm font-semibold text-[#2a130b] transition hover:-translate-y-0.5 hover:bg-white/55">
+              Написать
             </a>
+          </div>
+        </div>
+        <div class="flex justify-end self-start pt-1">
+          <div class="film-float glass-sheen relative flex h-[86px] w-[86px] items-center justify-center rounded-[28px] border border-white/55 bg-white/28 shadow-[0_18px_40px_rgba(68,37,22,0.1)] backdrop-blur-2xl sm:h-[108px] sm:w-[108px] sm:rounded-[34px]">
+            <span class="film-dot absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-[#ff4d4d] shadow-[0_0_12px_rgba(255,77,77,0.55)]"></span>
+            <div class="relative flex h-[38px] w-[56px] items-center justify-center rounded-[12px] border border-white/14 bg-[#261915] sm:h-[46px] sm:w-[70px] sm:rounded-[14px]">
+              <div class="absolute left-3 top-[-3px] h-1.5 w-5 rounded-md bg-[#261915] sm:left-4 sm:w-6"></div>
+              <div class="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/75 sm:h-6 sm:w-6">
+                <div class="absolute inset-[5px] rounded-full bg-white/75"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -39,38 +176,33 @@
   </section>
 
   <section id="cases" class="px-3 pb-16 sm:px-6">
-    <div class="mx-auto max-w-6xl rounded-[28px] border border-white/30 bg-[#17100d] p-3 text-white shadow-[0_28px_90px_rgba(44,19,8,0.22)] sm:rounded-[32px] sm:p-6 lg:p-8">
+    <div class="liquid-dark reveal reveal-delay-1 w-full rounded-[28px] p-3.5 text-white sm:rounded-[32px] sm:p-6 lg:p-8">
       <div>
-        <div class="mb-4">
+        <div class="mb-3 flex items-center justify-between gap-3 sm:mb-4">
           <div>
-            <p class="text-sm uppercase tracking-[0.32em] text-[#d3a17e]">Portfolio</p>
-            <h2 class="mt-2 text-[2.25rem] font-black leading-none tracking-[-0.05em] sm:mt-3 sm:text-5xl">
-              OUR WORKS
+            <h2 class="text-[1.9rem] font-semibold uppercase leading-none tracking-[-0.03em] text-white sm:text-[3.25rem]">
+              Кейсы
             </h2>
           </div>
-        </div>
-
-        <div id="categoryTabs" class="mb-3 flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mb-4 sm:gap-3"></div>
-        <div id="tagFilterWrap" class="mb-4 hidden">
-          <div id="tagFilter" class="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
-        </div>
-
-        <div class="mb-3 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
-          <h3 id="activeCategoryTitle" class="text-xl font-bold text-white sm:text-3xl"></h3>
           <div class="flex items-center gap-2">
-            <button id="scrollPrev" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-lg text-white transition hover:bg-white/10 sm:h-11 sm:w-11 sm:text-xl">
+            <button id="scrollPrev" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-base text-white transition hover:bg-white/20 sm:h-11 sm:w-11 sm:text-xl">
               ←
             </button>
-            <button id="scrollNext" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-lg text-white transition hover:bg-white/10 sm:h-11 sm:w-11 sm:text-xl">
+            <button id="scrollNext" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-base text-white transition hover:bg-white/20 sm:h-11 sm:w-11 sm:text-xl">
               →
             </button>
           </div>
         </div>
 
+        <div id="categoryTabs" class="mb-3 flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mb-3 sm:gap-3"></div>
+        <div id="tagFilterWrap" class="mb-3 hidden">
+          <div id="tagFilter" class="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"></div>
+        </div>
+
         <div id="casesPages" class="overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div id="casesTrack" class="flex gap-3 sm:gap-4"></div>
         </div>
-        <div id="emptyCases" class="hidden rounded-[24px] border border-white/10 bg-white/5 p-6 text-center text-sm text-white/65">
+        <div id="emptyCases" class="hidden rounded-[24px] border border-white/10 bg-white/8 p-6 text-center text-sm text-white/65">
           В этой категории пока нет кейсов.
         </div>
       </div>
@@ -79,42 +211,42 @@
 
   <section class="px-4 py-16 sm:px-6">
     <div class="mx-auto max-w-6xl">
-      <h2 class="text-center text-3xl font-bold text-[#2a130b] sm:text-4xl">Услуги</h2>
+      <h2 class="reveal reveal-delay-2 text-center text-3xl font-bold text-[#2a130b] sm:text-4xl">Услуги</h2>
       <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <article class="flex h-full flex-col rounded-[28px] border border-white/40 bg-white/60 p-6 shadow-lg backdrop-blur">
+        <article class="liquid-card reveal reveal-delay-2 flex h-full flex-col rounded-[28px] p-6">
           <h3 class="text-xl font-semibold">Reels для экспертов</h3>
           <p class="mt-4 text-[#4a2a1b]/80">
-            Съёмка вертикального контента, помощь с идеями, монтаж и титры. Всё под ключ для бренда и экспертности.
+            Вертикальный контент под ключ: съёмка, монтаж, титры и упаковка.
           </p>
           <div class="mt-auto flex items-center justify-between gap-4 pt-6">
             <span class="rounded-full bg-[#1a0f0a] px-4 py-2 text-sm font-bold text-white">от 2 000 ₽</span>
-            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-[#1a0f0a] hover:text-white">
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full border border-white/45 bg-white/28 px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-white/55">
               Записаться
             </a>
           </div>
         </article>
 
-        <article class="flex h-full flex-col rounded-[28px] border border-white/40 bg-white/60 p-6 shadow-lg backdrop-blur">
+        <article class="liquid-card reveal reveal-delay-2 flex h-full flex-col rounded-[28px] p-6">
           <h3 class="text-xl font-semibold">Подкасты под ключ</h3>
           <p class="mt-4 text-[#4a2a1b]/80">
-            Съёмка на 2–3 камеры, свет, монтаж и подготовка к публикации на площадках.
+            2–3 камеры, свет, монтаж и подготовка к публикации.
           </p>
           <div class="mt-auto flex items-center justify-between gap-4 pt-6">
             <span class="rounded-full bg-[#1a0f0a] px-4 py-2 text-sm font-bold text-white">от 25 000 ₽</span>
-            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-[#1a0f0a] hover:text-white">
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full border border-white/45 bg-white/28 px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-white/55">
               Записаться
             </a>
           </div>
         </article>
 
-        <article class="flex h-full flex-col rounded-[28px] border border-white/40 bg-white/60 p-6 shadow-lg backdrop-blur">
+        <article class="liquid-card reveal reveal-delay-3 flex h-full flex-col rounded-[28px] p-6">
           <h3 class="text-xl font-semibold">Онлайн-курсы</h3>
           <p class="mt-4 text-[#4a2a1b]/80">
-            Съёмка образовательных видео, монтаж уроков и аккуратная упаковка материалов.
+            Съёмка уроков, монтаж и аккуратная упаковка материала.
           </p>
           <div class="mt-auto flex items-center justify-between gap-4 pt-6">
             <span class="rounded-full bg-[#1a0f0a] px-4 py-2 text-sm font-bold text-white">от 10 000 ₽</span>
-            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-[#1a0f0a] hover:text-white">
+            <a href="https://t.me/kulapchin_a" target="_blank" class="rounded-full border border-white/45 bg-white/28 px-4 py-2 text-sm font-semibold text-[#2a130b] transition hover:bg-white/55">
               Записаться
             </a>
           </div>
@@ -123,15 +255,17 @@
     </div>
   </section>
 
-  <section id="contact" class="bg-[#1a0f0a] px-4 py-16 text-center text-white sm:px-6">
-    <h2 class="text-3xl font-bold">Записаться на съёмку или монтаж</h2>
-    <p class="mx-auto mt-4 max-w-2xl text-white/70">
-      Напишите в мессенджер и обсудим ваш проект, формат съёмки и подачу контента.
-    </p>
-    <div class="mt-8">
-      <a href="https://t.me/kulapchin_a" target="_blank" class="inline-flex rounded-full bg-white px-8 py-4 font-semibold text-[#1a0f0a] transition hover:-translate-y-0.5">
-        Telegram
-      </a>
+  <section id="contact" class="px-4 py-16 sm:px-6">
+    <div class="liquid-card reveal reveal-delay-3 mx-auto max-w-6xl rounded-[32px] px-6 py-10 text-center sm:px-10">
+      <h2 class="text-3xl font-bold text-[#241713]">Записаться на съёмку или монтаж</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-[#4f4038]/75">
+        Напишите в мессенджер и обсудим ваш проект, формат съёмки и подачу контента.
+      </p>
+      <div class="mt-8">
+        <a href="https://t.me/kulapchin_a" target="_blank" class="inline-flex rounded-full bg-[#201510] px-8 py-4 font-semibold text-white transition hover:-translate-y-0.5">
+          Telegram
+        </a>
+      </div>
     </div>
   </section>
 
@@ -184,7 +318,6 @@
     const tagFilter = document.getElementById("tagFilter");
     const casesPages = document.getElementById("casesPages");
     const casesTrack = document.getElementById("casesTrack");
-    const activeCategoryTitle = document.getElementById("activeCategoryTitle");
     const emptyCases = document.getElementById("emptyCases");
     const scrollPrev = document.getElementById("scrollPrev");
     const scrollNext = document.getElementById("scrollNext");
@@ -211,14 +344,13 @@
         <button
           onclick="setCategory('${category.name}')"
           data-category="${category.name}"
-          class="min-w-[210px] rounded-[20px] border px-3 py-3 text-left transition sm:min-w-[240px] sm:rounded-[24px] sm:px-4 sm:py-4 lg:min-w-0 ${
+          class="min-w-[158px] rounded-[18px] border px-3 py-2.5 text-left transition sm:min-w-[220px] sm:rounded-[24px] sm:px-4 sm:py-4 lg:min-w-0 ${
             activeCategory === category.name
-              ? "border-[#d3a17e] bg-[#d3a17e] text-[#1a0f0a]"
-              : "border-white/10 bg-white/5 text-white hover:bg-white/10"
+              ? "border-white/25 bg-white/22 text-white backdrop-blur-xl"
+              : "border-white/10 bg-white/8 text-white/78 hover:bg-white/14"
           }"
         >
-          <div class="text-[15px] font-bold sm:text-base">${category.name}</div>
-          <div class="mt-1 text-xs sm:text-sm ${activeCategory === category.name ? "text-[#4a2a1b]/80" : "text-white/55"}">${category.description}</div>
+          <div class="text-[13px] font-bold leading-tight sm:text-base">${category.name}</div>
         </button>
       `).join("");
     }
@@ -260,10 +392,10 @@
         <button
           onclick="setTag('${tag}')"
           data-tag="${tag}"
-          class="whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
+          class="whitespace-nowrap rounded-full border px-2.5 py-1 text-[11px] font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
             activeTag === tag
-              ? "border-[#d3a17e] bg-[#d3a17e] text-[#1a0f0a]"
-              : "border-white/10 bg-white/5 text-white/75 hover:bg-white/10"
+              ? "border-white/25 bg-white/22 text-white backdrop-blur-xl"
+              : "border-white/10 bg-white/8 text-white/75 hover:bg-white/14"
           }"
         >
           ${tag === "Все" ? "Все" : "#" + tag}
@@ -273,8 +405,6 @@
 
     function renderCases() {
       const visibleCases = getVisibleCases();
-
-      activeCategoryTitle.textContent = activeCategory;
 
       if (!visibleCases.length) {
         casesTrack.innerHTML = "";
@@ -288,14 +418,14 @@
 
       const cardMarkup = visibleCases.map((item) => {
         const cardWidth = item.category === "Реклама"
-          ? "w-[260px] sm:w-[360px] lg:w-[420px]"
-          : "w-full sm:w-[220px] lg:w-[238px]";
+          ? "w-[290px] sm:w-[360px] lg:w-[420px]"
+          : "w-full sm:w-[236px] lg:w-[252px]";
         const videoBox = item.category === "Реклама"
           ? "relative aspect-[1.62/1] overflow-hidden rounded-[20px] bg-black sm:aspect-video sm:rounded-[26px]"
-          : "relative aspect-[4.5/6] overflow-hidden rounded-[20px] bg-black sm:aspect-[4/6] sm:rounded-[26px]";
+          : "relative aspect-[5/6] overflow-hidden rounded-[20px] bg-black sm:aspect-[4.35/6] sm:rounded-[26px]";
 
         return `
-          <article class="${cardWidth} shrink-0 snap-start rounded-[24px] border border-white/10 bg-white/5 p-2.5 backdrop-blur sm:rounded-[30px] sm:p-3">
+          <article class="${cardWidth} shrink-0 snap-start rounded-[22px] border border-white/10 bg-white/8 p-2 backdrop-blur-xl sm:rounded-[30px] sm:p-3">
             <div class="${videoBox}">
               <iframe
                 src="${item.video}"
@@ -305,9 +435,9 @@
                 allowfullscreen
                 loading="lazy"></iframe>
             </div>
-            <div class="mt-3 sm:mt-4">
-              <h4 class="text-base font-semibold text-white sm:text-lg">${item.title}</h4>
-              ${item.tags ? `<div class="mt-2"><span class="rounded-full bg-[#d3a17e] px-2 py-0.5 text-[10px] font-semibold text-[#1a0f0a] sm:px-2.5 sm:text-[11px]">#${item.tags[0]}</span></div>` : ""}
+            <div class="mt-2.5 sm:mt-4">
+              <h4 class="text-[15px] font-semibold leading-snug text-white sm:text-lg">${item.title}</h4>
+              ${item.tags ? `<div class="mt-1.5"><span class="rounded-full bg-[#d3a17e] px-2 py-0.5 text-[10px] font-semibold text-[#1a0f0a] sm:px-2.5 sm:text-[11px]">#${item.tags[0]}</span></div>` : ""}
             </div>
           </article>
         `;
