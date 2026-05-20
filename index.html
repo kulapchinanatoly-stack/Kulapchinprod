@@ -301,7 +301,9 @@
       { title: "Астролог", category: "Вертикальный контент", video: "https://kinescope.io/embed/bf6go2D2zRsR2LmHx27ZoQ", tags: ["Разговорные"] },
       { title: "Шахматы", category: "Вертикальный контент", video: "https://kinescope.io/embed/bXjw5Jwe4nEf4sm47bXreR", tags: ["Мероприятие"] },
       { title: "Детский праздник", category: "Вертикальный контент", video: "https://kinescope.io/embed/168sCXpH1W5Qfw2ExRuub6", tags: ["Мероприятие"] },
-      { title: "Психолог", category: "Вертикальный контент", video: "https://kinescope.io/embed/wsdVfPng1qW4MPRzFvqxsD", tags: ["Разговорные"] }
+      { title: "Психолог", category: "Вертикальный контент", video: "https://kinescope.io/embed/wsdVfPng1qW4MPRzFvqxsD", tags: ["Разговорные"] },
+      { title: "Курс по Reels", category: "Курсы/Подкасты", video: "https://kinescope.io/embed/t2b9Uk7kfqM8GnsjvpGSzQ", tags: ["Курс"] },
+      { title: "Психолог подкаст", category: "Курсы/Подкасты", video: "https://kinescope.io/embed/hz1nHEaKvy3LgANFnSbTjB", tags: ["Подкаст"] }
     ];
 
     const categories = [
@@ -426,10 +428,11 @@
       emptyCases.classList.add("hidden");
 
       const cardMarkup = visibleCases.map((item) => {
-        const cardWidth = item.category === "Реклама"
+        const isWide = item.category === "Реклама" || item.category === "Курсы/Подкасты";
+        const cardWidth = isWide
           ? "w-[290px] sm:w-[360px] lg:w-[420px]"
           : "w-full sm:w-[236px] lg:w-[252px]";
-        const videoBox = item.category === "Реклама"
+        const videoBox = isWide
           ? "relative aspect-[1.62/1] overflow-hidden rounded-[20px] bg-black sm:aspect-video sm:rounded-[26px]"
           : "relative aspect-[5/6] overflow-hidden rounded-[20px] bg-black sm:aspect-[4.35/6] sm:rounded-[26px]";
 
